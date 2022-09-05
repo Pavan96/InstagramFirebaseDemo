@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CB0B91028C612FC00F49095 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0B90F28C612FC00F49095 /* FeedController.swift */; };
+		9CB0B91228C6133400F49095 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0B91128C6133400F49095 /* SearchController.swift */; };
+		9CB0B91428C6134500F49095 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0B91328C6134500F49095 /* NotificationController.swift */; };
+		9CB0B91628C6135400F49095 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0B91528C6135400F49095 /* ProfileController.swift */; };
+		9CB0B91828C6136D00F49095 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0B91728C6136D00F49095 /* ImageSelectorController.swift */; };
 		9CC0C17428C245D90060554B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0C17328C245D90060554B /* AppDelegate.swift */; };
 		9CC0C17628C245D90060554B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0C17528C245D90060554B /* SceneDelegate.swift */; };
 		9CC0C17828C245D90060554B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0C17728C245D90060554B /* ViewController.swift */; };
@@ -37,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9CB0B90F28C612FC00F49095 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		9CB0B91128C6133400F49095 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		9CB0B91328C6134500F49095 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		9CB0B91528C6135400F49095 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		9CB0B91728C6136D00F49095 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
 		9CC0C17028C245D90060554B /* InstagramFirebaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirebaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC0C17328C245D90060554B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CC0C17528C245D90060554B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +163,11 @@
 			isa = PBXGroup;
 			children = (
 				9CC0C1AA28C24B470060554B /* MainTabController.swift */,
+				9CB0B90F28C612FC00F49095 /* FeedController.swift */,
+				9CB0B91128C6133400F49095 /* SearchController.swift */,
+				9CB0B91328C6134500F49095 /* NotificationController.swift */,
+				9CB0B91528C6135400F49095 /* ProfileController.swift */,
+				9CB0B91728C6136D00F49095 /* ImageSelectorController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -310,9 +325,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CC0C17828C245D90060554B /* ViewController.swift in Sources */,
+				9CB0B91228C6133400F49095 /* SearchController.swift in Sources */,
 				9CC0C17428C245D90060554B /* AppDelegate.swift in Sources */,
+				9CB0B91428C6134500F49095 /* NotificationController.swift in Sources */,
+				9CB0B91828C6136D00F49095 /* ImageSelectorController.swift in Sources */,
+				9CB0B91028C612FC00F49095 /* FeedController.swift in Sources */,
 				9CC0C1AB28C24B470060554B /* MainTabController.swift in Sources */,
 				9CC0C17628C245D90060554B /* SceneDelegate.swift in Sources */,
+				9CB0B91628C6135400F49095 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
