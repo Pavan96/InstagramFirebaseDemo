@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C99422728D9D7720091C401 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C99422628D9D7720091C401 /* LoginViewModel.swift */; };
 		9CA6842128CA014F000E1A84 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6842028CA014F000E1A84 /* LoginController.swift */; };
 		9CA6842328CA0166000E1A84 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6842228CA0166000E1A84 /* RegistrationController.swift */; };
 		9CA6842528CA2CF5000E1A84 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6842428CA2CF5000E1A84 /* CustomTextField.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C99422628D9D7720091C401 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9CA6842028CA014F000E1A84 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		9CA6842228CA0166000E1A84 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		9CA6842428CA2CF5000E1A84 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 		9CC0C1A828C246FB0060554B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9C99422628D9D7720091C401 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				9CC0C17428C245D90060554B /* AppDelegate.swift in Sources */,
 				9CB0B91428C6134500F49095 /* NotificationController.swift in Sources */,
 				9CB0B91828C6136D00F49095 /* ImageSelectorController.swift in Sources */,
+				9C99422728D9D7720091C401 /* LoginViewModel.swift in Sources */,
 				9CB0B91028C612FC00F49095 /* FeedController.swift in Sources */,
 				9CA6842328CA0166000E1A84 /* RegistrationController.swift in Sources */,
 				9CC0C1AB28C24B470060554B /* MainTabController.swift in Sources */,

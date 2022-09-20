@@ -10,6 +10,7 @@ import UIKit
 class LoginController: UIViewController {
 
     // MARK: - Properties
+    private var viewModel = LoginViewModel()
     
     private let iconImage: UIImageView = {
         let imageView = UIImageView()
@@ -21,12 +22,14 @@ class LoginController: UIViewController {
     private let emailTextField: CustomTextField = {
         let textField = CustomTextField(placeHolder: "Email")
         textField.keyboardType = .emailAddress
+        textField.textContentType = .username
         return textField
     }()
     
     private let passwordTextField: CustomTextField = {
         let textField = CustomTextField(placeHolder: "Password")
         textField.isSecureTextEntry = true
+        textField.textContentType = .password
         return textField
     }()
     
@@ -88,6 +91,13 @@ class LoginController: UIViewController {
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.centerX(inView: view)
         dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
+        
+        configureObservers()
+    }
+    
+    func configureObservers() {
+        emailTextField.addTarget(self, action: #selector(textFieldAction), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textFieldAction), for: .editingChanged)
     }
     
     @objc func handleShowSignUp() {
@@ -95,4 +105,11 @@ class LoginController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    @objc func textFieldAction(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else {
+            viewModel.password = sender.text
+        }
+    }
 }
