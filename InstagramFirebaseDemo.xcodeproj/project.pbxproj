@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C99422728D9D7720091C401 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C99422628D9D7720091C401 /* LoginViewModel.swift */; };
+		9CA54F8228E61F4300114598 /* RegisterationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA54F8128E61F4300114598 /* RegisterationViewModel.swift */; };
 		9CA6842128CA014F000E1A84 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6842028CA014F000E1A84 /* LoginController.swift */; };
 		9CA6842328CA0166000E1A84 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6842228CA0166000E1A84 /* RegistrationController.swift */; };
 		9CA6842528CA2CF5000E1A84 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6842428CA2CF5000E1A84 /* CustomTextField.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		9C99422628D9D7720091C401 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		9CA54F8128E61F4300114598 /* RegisterationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationViewModel.swift; sourceTree = "<group>"; };
 		9CA6842028CA014F000E1A84 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		9CA6842228CA0166000E1A84 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		9CA6842428CA2CF5000E1A84 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				9C99422628D9D7720091C401 /* LoginViewModel.swift */,
+				9CA54F8128E61F4300114598 /* RegisterationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				9CA6842528CA2CF5000E1A84 /* CustomTextField.swift in Sources */,
 				9CC0C17828C245D90060554B /* ViewController.swift in Sources */,
 				9CA6842128CA014F000E1A84 /* LoginController.swift in Sources */,
+				9CA54F8228E61F4300114598 /* RegisterationViewModel.swift in Sources */,
 				9CB0B91A28C6407E00F49095 /* FeedCell.swift in Sources */,
 				9CB0B91228C6133400F49095 /* SearchController.swift in Sources */,
 				9CC0C17428C245D90060554B /* AppDelegate.swift in Sources */,

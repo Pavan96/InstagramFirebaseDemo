@@ -98,11 +98,16 @@ class LoginController: UIViewController {
     func configureObservers() {
         emailTextField.addTarget(self, action: #selector(textFieldAction), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFieldAction), for: .editingChanged)
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleKeyboard)))
     }
     
     @objc func handleShowSignUp() {
         let controller = RegistrationController()
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func handleKeyboard() {
+        view.endEditing(true)
     }
     
     @objc func textFieldAction(sender: UITextField) {
@@ -111,5 +116,16 @@ class LoginController: UIViewController {
         } else {
             viewModel.password = sender.text
         }
+        updateForm()
+    }
+}
+
+// MARK: - FormViewModel
+
+extension LoginController: FormViewModel {
+    func updateForm() {
+        loginButton.backgroundColor = viewModel.buttonBackgroundColor
+        loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        loginButton.isEnabled = viewModel.formIsValid
     }
 }

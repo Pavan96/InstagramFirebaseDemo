@@ -10,6 +10,7 @@ import UIKit
 class RegistrationController: UIViewController {
 
     // MARK: - Properties
+    private var viewModel = RegisterationViewModel()
     
     private let plusPhotoButon: UIButton = {
         let button = UIButton(type: .system)
@@ -85,9 +86,66 @@ class RegistrationController: UIViewController {
         view.addSubview(alreadyHaveAccountButton)
         alreadyHaveAccountButton.centerX(inView: view)
         alreadyHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleKeyboard)))
+        
+        configureObservers()
+        addKeyboardObservers()
+    }
+    
+    func addKeyboardObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboard(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboard(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboard(notification:)), name:UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    func configureObservers() {
+        emailTextField.addTarget(self, action: #selector(textFieldAction), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textFieldAction), for: .editingChanged)
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleKeyboard)))
+    }
+    
+    // MARK: - Action methods
+    
+    @objc func keyboard(notification:Notification) {
+        guard let keyboardReact = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
+            return
+        }
+        if notification.name == UIResponder.keyboardWillShowNotification ||  notification.name == UIResponder.keyboardWillChangeFrameNotification {
+            self.view.frame.origin.y = -keyboardReact.height
+        }else{
+            self.view.frame.origin.y = 0
+        }
     }
     
     @objc func handleShowLogin() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func handleKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc func textFieldAction(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else if sender == passwordTextField {
+            viewModel.password = sender.text
+        } else if sender == userNameTextField {
+            viewModel.username = sender.text
+        } else {
+            viewModel.fullname = sender.text
+        }
+        updateForm()
+    }
+}
+
+// MARK: - FormViewModel
+
+extension RegistrationController: FormViewModel {
+    func updateForm() {
+        signUpButton.backgroundColor = viewModel.buttonBackgroundColor
+        signUpButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        signUpButton.isEnabled = viewModel.formIsValid
     }
 }
