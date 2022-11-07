@@ -12,9 +12,10 @@ class RegistrationController: UIViewController {
     // MARK: - Properties
     private var viewModel = RegisterationViewModel()
     
-    private let plusPhotoButon: UIButton = {
+    private lazy var plusPhotoButon: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .white
+        button.addTarget(self, action: #selector(handleProfilePhotoSelect), for: .touchUpInside)
         button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
         return button
     }()
@@ -102,6 +103,8 @@ class RegistrationController: UIViewController {
     func configureObservers() {
         emailTextField.addTarget(self, action: #selector(textFieldAction), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFieldAction), for: .editingChanged)
+        fullNameTextField.addTarget(self, action: #selector(textFieldAction), for: .editingChanged)
+        userNameTextField.addTarget(self, action: #selector(textFieldAction), for: .editingChanged)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleKeyboard)))
     }
     
@@ -138,6 +141,13 @@ class RegistrationController: UIViewController {
         }
         updateForm()
     }
+    
+    @objc func handleProfilePhotoSelect() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true)
+    }
 }
 
 // MARK: - FormViewModel
@@ -147,5 +157,26 @@ extension RegistrationController: FormViewModel {
         signUpButton.backgroundColor = viewModel.buttonBackgroundColor
         signUpButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
         signUpButton.isEnabled = viewModel.formIsValid
+    }
+}
+
+
+// MARK: - UIImagePickerController
+
+extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let selectedImage = info[.editedImage] as? UIImage else {
+            return
+        }
+        
+        plusPhotoButon.layer.cornerRadius = plusPhotoButon.frame.width / 2
+        plusPhotoButon.layer.masksToBounds = true
+        plusPhotoButon.layer.borderWidth = 2
+        plusPhotoButon.layer.borderColor = UIColor.white.cgColor
+        plusPhotoButon.setImage(selectedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        self.dismiss(animated: true)
     }
 }
