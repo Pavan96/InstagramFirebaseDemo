@@ -65,7 +65,7 @@ class LoginController: UIViewController {
     }
     
     // MARK: - Helpers
-     
+    // UI configuration 
     func configureUI() {
         view.backgroundColor = .white
         navigationController?.isNavigationBarHidden = true

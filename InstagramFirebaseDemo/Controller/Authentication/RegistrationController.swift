@@ -37,11 +37,13 @@ class RegistrationController: UIViewController {
         return textField
     }()
     
+    // username textfield
     private let userNameTextField: CustomTextField = {
         let textField = CustomTextField(placeHolder: "Username")
         return textField
     }()
     
+    // signUp
     private let signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
